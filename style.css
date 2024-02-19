@@ -31,16 +31,193 @@
 }
 
 body {
+    align-items    : center;
+    display        : flex;
+    flex-direction : column;
+    font-family    : "Hanken Grotesk", sans-serif;
+    font-weight    : 500;
+    gap            : 2em;
+    justify-content: center;
+    min-height     : 100vh;
+    min-width      : 100vw;
+}
+
+.container {
+    background-color: white;
+    display         : flex;
+    flex-direction  : row;
     align-items     : center;
-    background-color: var(--white);
+    justify-content : center;
+    border-radius   : 1.5em;
+    width           : 32em;
+    height          : 22em;
+    overflow        : hidden;
+    box-shadow      : 0 10px 50px -12px hsla(241, 100%, 89%, 0.6);
+}
+
+.result {
+    width           : 50%;
+    min-height      : 100%;
+    background-image: linear-gradient(to bottom, var(--light-slate-blue) 0%, var(--light-royal-blue) 100%);
+    border-radius   : 1.5em;
+    padding         : 2em;
+    text-align      : center;
     display         : flex;
     flex-direction  : column;
-    font-family     : "Hanken Grotesk", sans-serif;
-    font-weight     : 500;
-    gap             : 2em;
+    align-items     : center;
+    justify-content : space-between;
+}
+
+.result p {
+    color: var(--light-lavender);
+}
+
+.result .circle {
+    width           : 9em;
+    height          : 9em;
+    background-image: linear-gradient(to bottom, var(--violet-blue) 0%, var(--persian-blue) 100%);
+    display         : flex;
+    flex-direction  : column;
+    align-items     : center;
     justify-content : center;
-    min-height      : 100vh;
-    min-width       : 100vw;
+    border-radius   : 50%;
+}
+
+.result .score {
+    font-size  : 3.75em;
+    color      : var(--white);
+    font-weight: 700;
+    line-height: 1.25em;
+    margin-top : -.25em;
+}
+
+.score+p {
+    line-height: 0;
+    font-size  : .9em;
+}
+
+.result .result_grade {
+    font-size  : 1.4em;
+    font-weight: 600;
+    color      : var(--white);
+}
+
+.result .result_overview {
+    text-align : center;
+    font-size  : .85em;
+    font-weight: 400;
+}
+
+.summary {
+    width          : 50%;
+    height         : 100%;
+    padding        : 1.5em;
+    display        : flex;
+    flex-direction : column;
+    justify-content: space-between;
+}
+
+.summary .title {
+    font-size  : 1.15em;
+    font-weight: 700;
+    color      : var(--dark-gray-blue);
+}
+
+.summary_topic {
+    display        : flex;
+    flex-direction : row;
+    width          : 100%;
+    height         : max-content;
+    padding        : .75em;
+    margin-bottom  : .75em;
+    justify-content: space-between;
+    align-items    : center;
+    border-radius  : .5em;
+    position       : relative;
+    overflow       : hidden;
+}
+
+.summary_topic::before {
+    position: absolute;
+    top     : 0;
+    left    : 0;
+    content : '';
+    width   : 100%;
+    height  : 100%;
+    opacity : .05;
+}
+
+.summary_topic>div {
+    display    : flex;
+    align-items: center;
+    gap        : .75em;
+}
+
+.summary_topic p {
+    font-size  : .9em;
+    font-weight: 600;
+}
+
+.summary_topic .summary_score {
+    color: hsl(0, 0%, 60%);
+}
+
+.summary_topic .summary_score span {
+    color      : var(--dark-gray-blue);
+    font-weight: 800;
+}
+
+.summary_topic#reaction::before {
+    background-color: var(--light-red);
+}
+
+.summary_topic#reaction>div p {
+    color: var(--light-red);
+}
+
+.summary_topic#memory::before {
+    background-color: var(--orangey-yellow);
+}
+
+.summary_topic#memory>div p {
+    color: var(--orangey-yellow);
+}
+
+.summary_topic#verbal::before {
+    background-color: var(--green-teal);
+}
+
+.summary_topic#verbal>div p {
+    color: teal;
+}
+
+.summary_topic#visual::before {
+    background-color: var(--cobalt-blue);
+}
+
+.summary_topic#visual>div p {
+    color: var(--cobalt-blue);
+}
+
+.summary button {
+    font-family: "Hanken Grotesk",
+        sans-serif;
+    width           : 100%;
+    height          : max-content;
+    padding         : .75em 0;
+    font-size       : .8em;
+    font-weight     : 500;
+    outline         : 0;
+    border          : 0;
+    background-color: var(--dark-gray-blue);
+    color           : var(--white);
+    border-radius   : 10em;
+    cursor          : pointer;
+}
+
+.summary button:hover {
+    opacity   : .85;
+    transition: all ease-in-out .2s;
 }
 
 .attribution {
